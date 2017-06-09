@@ -1,10 +1,8 @@
 var fs = require('fs')
 var glue = require('hyperglue')
-var insertCss = require('insert-css')
 var xtend = require('xtend')
 var path = require('path')
 
-var css = fs.readFileSync(path.join(__dirname, '/style.css'), 'utf-8')
 var html = fs.readFileSync(path.join(__dirname, '/index.html'), 'utf-8')
 
 module.exports = dialog
@@ -17,8 +15,6 @@ function dialog (opt) {
     '.cancel': opt.cancel || 'Cancel',
     '.url': opt.hostname || window.location.hostname
   }
-
-  insertCss(opt.style || css)
 
   return {
     alert: render.bind(opt, 'alert'),
