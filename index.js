@@ -3,7 +3,17 @@ var glue = require('hyperglue')
 var xtend = require('xtend')
 var path = require('path')
 
-var html = fs.readFileSync(path.join(__dirname, '/index.html'), 'utf-8')
+var html = `<div class="dialogue-widget type">
+  <img class="icon" src="">
+  <h3 class="url"></h3>
+  <span class="title"></span>
+  <form>
+    <input tabindex="1">
+  </form>
+  <div class="divider"></div>
+  <button class="cancel" tabindex="3"></button>
+  <button class="ok" tabindex="2"></button>
+</div>`;
 
 module.exports = dialog
 
